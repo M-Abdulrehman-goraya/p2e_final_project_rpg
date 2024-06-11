@@ -41,8 +41,9 @@ def main(username,points,bg,main_character,enemy,reward):
         #Heal button to heal your charachter
         heal_button=button.Button(constants.TEAL, 10,550)
         heal_text=constants.font.render("Heal", True, constants.BLACK)
-        #To represent total number of potions
+        #To represent available number of potions
         potions_text = constants.font.render(f"Potions: {main_character.potions}", True, constants.BLACK)
+        enemy_potions_text = constants.font.render(f"Potions: {enemy.potions}", True, constants.BLACK)
         #To represent the health of both charachters
         main_health_text = constants.font.render(f"Health: {main_character.hp}/{main_character.max_hp}", True, constants.BLACK)
         enemy_health_text = constants.font.render(f"Health: {enemy.hp}/{enemy.max_hp}", True, constants.BLACK)
@@ -87,6 +88,7 @@ def main(username,points,bg,main_character,enemy,reward):
         screen.blit(heal_text, (80, 555))
         screen.blit(attack_text, (70, 505))
         screen.blit(potions_text, (20, 460))
+        screen.blit(enemy_potions_text,(500,460))
         screen.blit(main_health_text, (20, 410))
         screen.blit(enemy_health_text, (500, 410))
         if game_over==False:
